@@ -1,10 +1,4 @@
 package iloveyouboss;
-class Question{
-	String text;
-	public Question(String text) {
-		this.text = text;
-	}
-}
 public class Answer {
 	private Question question;
 	private Bool desiredValue;
@@ -13,7 +7,9 @@ public class Answer {
 		this.question = question;
 		this.desiredValue = desiredValue;
 	}
-
+	public int getQuestionId() {
+		return question.id;
+	}
 	public String getQuestionText() {
 		return question.text;
 	}

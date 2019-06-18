@@ -1,12 +1,9 @@
 package iloveyouboss;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import org.junit.Ignore;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 class ProfileTest {
@@ -54,15 +51,5 @@ class ProfileTest {
 		boolean matches = profile.matches(criteria);
 		assertTrue(matches);
 	}
-	@Disabled
-	@Test
-	void matchUpdateScoreForAnyMatches() {
-		profile.add(new Answer(question, Bool.FALSE));
-		Criterion criterion = new Criterion(new Answer(question,Bool.TRUE),Weight.DONT_CARE);
-		criteria.add(criterion);
-		
-		boolean matches = profile.matches(criteria);
-		assertTrue(matches);
-		assertEquals(profile.getScore(), 1);
-	}
+
 }
