@@ -11,6 +11,8 @@ public class ScoreCollection {
 		scores.add(scoreable);
 	}
 	public int arithmeticMean() {
+		if(scores.isEmpty())
+			return 0;
 		int total  = scores.stream().mapToInt(Scoreable::getScore).sum();
 		return total / scores.size();
 	}
